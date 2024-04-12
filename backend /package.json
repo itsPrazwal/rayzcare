@@ -1,0 +1,39 @@
+{
+  "name": "rayzcare",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "author": "Prazwal Malakar <its.prazwal@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "@sanity/base": "^2.35.2",
+    "@sanity/cli": "^2.35.3",
+    "@sanity/color-input": "^2.36.0",
+    "@sanity/core": "^2.35.0",
+    "@sanity/dashboard": "^2.36.0",
+    "@sanity/default-layout": "^2.35.2",
+    "@sanity/default-login": "^2.35.2",
+    "@sanity/desk-tool": "^2.35.2",
+    "@sanity/language-filter": "^2.36.0",
+    "@sanity/orderable-document-list": "^0.0.10",
+    "@sanity/production-preview": "^2.33.2",
+    "@sanity/scheduled-publishing": "^0.1.14",
+    "@sanity/vision": "^2.35.2",
+    "lodash.get": "^4.4.2",
+    "pluralize": "^8.0.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "react-icons": "^4.3.1",
+    "sanity-plugin-dashboard-widget-document-chart": "^0.0.6",
+    "sanity-plugin-dashboard-widget-document-list": "^0.1.0",
+    "sanity-plugin-dashboard-widget-shopify": "^0.1.8",
+    "sanity-plugin-media": "1.4.10",
+    "sanity-plugin-vercel-deploy": "2.1.6",
+    "styled-components": "^5.2.0"
+  }
+}

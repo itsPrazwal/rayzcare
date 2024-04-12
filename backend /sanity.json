@@ -1,0 +1,65 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "dtth4mk1",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "rayzcare"
+  },
+  "plugins": [
+    "@sanity/dashboard",
+    "@sanity/base",
+    "@sanity/color-input",
+    "@sanity/production-preview",
+    "@sanity/default-layout",
+    "@sanity/orderable-document-list",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/vision",
+    "@sanity/language-filter",
+    "dashboard-widget-document-list",
+    "vercel-deploy",
+    "media",
+    "dashboard-widget-document-chart",
+    "vimeo"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./parts/deskStructure"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./parts/languageFilterConfig.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./parts/assetSources"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/file/asset-sources",
+      "path": "./parts/assetSources"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./parts/dashboardConfig"
+    },
+    {
+      "name": "part:@sanity/base/new-document-structure",
+      "path": "./parts/newDocumentStructure"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./parts/resolveDocumentActions"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./parts/resolveProductionUrl.js"
+    }
+  ]
+}
