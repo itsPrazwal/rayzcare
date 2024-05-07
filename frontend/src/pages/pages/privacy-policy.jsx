@@ -5,14 +5,15 @@ import { Title } from '~/components/Title'
 import { RichText } from '~/components/RichText'
 
 export default function PrivacyPolicyPage({ globalMeta, settings }) {
+  console.log({settings})
   return (
     <Layout>
       <Head global={globalMeta} pageTitle="Privacy policy" />
 
-      <div className="mt-[--breadcrumb-height] flex flex-col gap-30 p-20">
+      <div className="flex flex-col">
         <Title>Privacy policy</Title>
         <div className="text-style-description md:px-[5rem]">
-          <RichText value={settings.privacyPolicy} />
+          <RichText value={settings?.privacyPolicy} />
         </div>
       </div>
     </Layout>

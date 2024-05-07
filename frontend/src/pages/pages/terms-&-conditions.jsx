@@ -12,7 +12,7 @@ export default function TermsConditionsPage({ globalMeta, settings }) {
       <div className="mt-[--breadcrumb-height] flex flex-col gap-30 p-20">
         <Title>Terms & Conditions</Title>
         <div className="text-style-description md:px-[5rem]">
-          <RichText value={settings.termsConditions} />
+          <RichText value={settings?.termsConditions} />
         </div>
       </div>
     </Layout>

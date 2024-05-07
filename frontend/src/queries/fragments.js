@@ -61,7 +61,7 @@ export const VIDEO_LOCALE = /* groq */ `
 
 export const PORTABLE_TEXT = /* groq */ `
   ...,
-  'markDefs': markDefs[]{
+  markDefs[]{
     ...,
     _type == 'annotationLinkInternal' => {
       'slug': @.reference->slug.current,

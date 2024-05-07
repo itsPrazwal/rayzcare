@@ -12,7 +12,7 @@ export default function AccessibilityPage({ globalMeta, settings }) {
       <div className="mt-[--breadcrumb-height] flex flex-col gap-30 p-20">
         <Title>Accessibility</Title>
         <div className="text-style-description md:px-[5rem]">
-          <RichText value={settings.accessibility} />
+          <RichText value={settings?.accessibility} />
         </div>
       </div>
     </Layout>
