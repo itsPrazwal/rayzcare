@@ -1,0 +1,21 @@
+export const paths = {
+  home: '/',
+  countries: _ => '/countries',
+  country: slug => '/countries/' + slug,
+  artistsType: slug => '/artists/type/' + slug,
+  services: _ => '/services',
+  service: slug => '/services/' + slug,
+  standardizedTests: _ => '/standardized-test',
+  standardizedTest: slug => '/standardized-test/' + slug,
+  standardizedTestType: slug => '/standardized-test/type/' + slug,
+  publications: _ => '/library',
+  publication: slug => '/library/' + slug,
+  vimeo: slug => '/library/video/' + slug,
+  teams: _ => '/teams',
+  team: slug => '/teams/' + slug,
+  college: slug => '/colleges/' + slug,
+  consultancies: _ => '/consultancies',
+  locations: _ => '/locations',
+  location: slug => '/locations/' + slug,
+  page: slug => '/pages/' + slug
+}

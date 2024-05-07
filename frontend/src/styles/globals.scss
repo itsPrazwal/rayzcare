@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 3.8rem;
+    --footer-height: 12rem;
+    --body-min-height: calc(100vh - 4.8rem - 12rem);
+    --breadcrumb-height: 2.5rem;
+  }
+
+  html {
+    font-size: 4.7vmin;
+
+    @screen md {
+      font-size: 2.1vw;
+    }
+    @screen xl {
+      font-size: 1.395vw;
+    }
+  }
+
+  body {
+    @apply selection:bg-accent selection:text-white;
+    font-feature-settings: 'liga' 1;
+    line-height: 1;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    font-family: var(--display), var(--chinese);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a,
+  button,
+  input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input,
+  textarea {
+    appearance: none;
+    border-radius: 0px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    -webkit-border-radius: 0;
+  }
+
+  input[type='checkbox']:checked {
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 16 16" fill="darkblue" xmlns="http://www.w3.org/2000/svg"><path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z"/></svg>');
+  }
+
+  select {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .responsive-image {
+    .lazy-load-image-background,
+    .lazy-load-placeholder {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &.animate-opacity {
+      // .lazy-image {
+      //   opacity: 0;
+      //   transition: opacity 300ms ease;
+      // }
+      &:not(.preload) {
+        .placeholder {
+          transition: opacity 200ms ease;
+        }
+
+        .lazy-load-image-loaded {
+          .lazy-image {
+            opacity: 1;
+          }
+
+          & + .placeholder {
+            opacity: 0;
+          }
+        }
+      }
+
+      &.preload {
+        .placeholder {
+          display: none;
+        }
+      }
+    }
+
+    span {
+      z-index: 2;
+      width: 100%;
+    }
+  }
+
+  .hero {
+    @apply md:h-[calc(100vh_-_var(--header-height)_-_1rem)] sm:h-max;
+
+    & > div:last-child:first-child {
+      @apply md:w-[100vw] md:min-h-[25rem];
+      .responsive-image,
+      .responsive-video {
+        @apply md:h-full md:w-full;
+        img,
+        video {
+          @apply md:object-cover;
+        }
+      }
+    }
+
+    &.publication {
+      & > div:last-child:first-child {
+        .responsive-image,
+        .responsive-video {
+          @apply md:bg-publication;
+          img,
+          video {
+            @screen md {
+              @apply object-contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .lining-nums {
+    font-variant-numeric: lining-nums;
+  }
+
+  .small-caps {
+    @apply font-display-sc lowercase;
+  }
+
+  .font-display-local {
+    .italic,
+    &.italic {
+      @apply font-light tracking-0;
+    }
+
+    em {
+      @apply font-light;
+    }
+  }
+
+  .text-style-normal {
+    @apply tracking-display-text decoration-[1px] underline-offset-[0.15em];
+    font-family: var(--display), var(--chinese);
+  }
+
+  .text-style-title {
+    @apply font-display text-title font-light tracking-description uppercase text-accent;
+    @screen sm {
+      @apply text-[2rem];
+    }
+    &.menu-title {
+      @media screen and (min-width: 1024px) and (max-width: 1280px) {
+        @apply text-[1.2rem];
+      }
+    }
+  }
+
+  .text-style-quote {
+    @apply indent-[-0.25em] uppercase leading-15 text-[1.1rem];
+  }
+
+  .text-style-quote-writer {
+    @apply text-style-description italic mt-15;
+  }
+
+  .text-style-subtitle {
+    @apply small-caps tracking-display-text font-light;
+    font-size: 1.2rem;
+    // font-variant-numeric: lining-nums;
+  }
+
+  .text-style-link {
+    @apply text-style-subtitle cursor-pointer text-accent decoration-1 underline-offset-text hover:underline;
+  }
+
+  .text-style-condensed_title {
+    @apply font-condensed font-bold uppercase tracking-condensed;
+  }
+
+  .text-style-condensed_info {
+    @apply font-condensed text-[0.7rem] uppercase;
+    @screen md {
+      @apply text-info;
+    }
+  }
+
+  .text-style-info {
+    @apply font-condensed uppercase tracking-condensed;
+  }
+
+  .text-style-description {
+    @apply text-description text-style-normal rich-text font-light leading-tight;
+  }
+
+  .text-style-caption {
+    @apply text-caption font-light leading-13 tracking-caption;
+  }
+
+  .grid-items {
+    @apply grid grid-cols-2 gap-20 md:grid-cols-4 md:gap-40;
+    &[data-count='1'] {
+      @apply grid-cols-1;
+    }
+
+    &[data-count='2'] {
+      @apply grid-cols-2;
+    }
+  }
+
+  .info-submodule {
+    ul {
+      @apply grid grid-cols-2 gap-40 gap-y-20 md:grid-cols-4;
+      li {
+        @apply list-none;
+        &::before {
+          content: '' !important;
+        }
+      }
+    }
+  }
+
+  .chronology-section {
+    .text-style-caption {
+      @apply text-gray-500;
+    }
+
+    .module-chronology-text:first-child .text-style-title {
+      @apply md:-mt-[0.3em];
+    }
+  }
+
+  select {
+    background: none;
+  }
+
+  .button {
+    @apply px-10 py-5 text-style-caption uppercase;
+
+    &.button-primary {
+      @apply bg-accent text-white;
+    }
+
+    &.button-outline {
+      @apply border border-accent text-accent;
+    }
+  }
+}
+
+@layer utilities {
+  b,
+  strong {
+    font-weight: inherit;
+  }
+
+  .rich-text {
+    // @apply [&_ul]:list-inside [&_ul]:list-disc;
+
+    a {
+      @apply text-accent decoration-1 underline-offset-[0.15em] hover:no-underline group-hover:no-underline;
+    }
+
+    ul > li {
+      &::before {
+        content: '•  ';
+      }
+    }
+
+    // & > * + * {
+    //   margin-top: 1.5rem;
+    // }
+
+    & > * + figure {
+      margin-top: 2rem;
+    }
+
+    & em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    & strong {
+      font-weight: inherit;
+    }
+
+    p,
+    ul {
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+
+    p,
+    strong {
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}
+
+.st0 {
+  fill: none;
+}
+
+.st1 {
+  fill: #1946AD;
+}

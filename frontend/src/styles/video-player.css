@@ -1,0 +1,53 @@
+/* Not purged by tailwind */
+.video-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.video-wrapper .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: sticky;
+  bottom: 0;
+  padding: 1em 0;
+  width: 100%;
+  background: #fff;
+  transform: translateY(0%);
+  /* transition: all 0.3s ease-in-out; */
+  grid-gap: 1em;
+}
+.video-wrapper .controls:not(.active) {
+  /* transform: translateY(150%); */
+  display: none;
+}
+
+.video-wrapper input[type='range'] {
+  /* -webkit-appearance: none !important; */
+  background: rgba(0, 0, 0, 1);
+  height: 1px;
+  width: 100%;
+}
+
+.video-wrapper input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  cursor: pointer;
+  height: 10px;
+  width: 1px;
+  display: block;
+  background: rgba(0, 0, 0, 1);
+}
+
+.video-wrapper input[type='range']::-moz-range-progress {
+  background: white;
+}

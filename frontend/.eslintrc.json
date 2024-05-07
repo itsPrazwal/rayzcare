@@ -1,0 +1,17 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "@next/next/no-img-element": "off"
+  },
+  "overrides": [
+    {
+      // https://github.com/vercel/next.js/issues/40687
+      "files": ["*.{js,jsx,ts,tsx}"],
+      // This is the default parser of ESLint
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 2020
+      }
+    }
+  ]
+}
