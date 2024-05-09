@@ -15,7 +15,7 @@ export default function HomePage({globalMeta, home}) {
       <Head global={globalMeta}/>
       <Div100vh>
         <Carousel
-          className="slider home fade fixed inset-0 z-0 h-full pt-[--header-height]"
+          className="slider home fade fixed inset-0 z-0 h-full"
           autoplay={true}
         >
           {modules?.map(module => (

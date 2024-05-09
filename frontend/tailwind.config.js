@@ -32,6 +32,7 @@ module.exports = {
     extend: {
       colors: {
         accent: '#008882',
+        theme: '#cf7650',
         artwork: '#ebebeb',
         publication: '#ebebeb'
       },

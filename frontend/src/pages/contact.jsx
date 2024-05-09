@@ -175,7 +175,7 @@ export default function ContactPage({ globalMeta, contactForm }) {
             <div className="mt-28 flex items-center justify-between sm:flex-col sm:items-end sm:gap-20 md:col-span-12">
               <InputCheckBox
                 value={formValues.subscribe}
-                label="Yes, I'd like to receive Rayzcare updates by email."
+                label="Yes, I'd like to receive Rayzscare updates by email."
                 name="subscribe"
                 onChange={handleChange}
                 wrapperClass="sm:items-start sm:w-full"

@@ -37,7 +37,6 @@ export function NewsletterSubscribe({ listID, message: successMessage }) {
             Don’t fill this out
             <input hidden type="text" name="botfield" onChange={handleChange} />
           </label>
-
           <label aria-hidden="true" htmlFor="email" className="hidden">
             Your Email Here
           </label>
@@ -51,10 +50,10 @@ export function NewsletterSubscribe({ listID, message: successMessage }) {
             spellCheck={false}
             required
             onChange={handleChange}
-            className="min-w-[15rem] border-b border-accent px-6 pb-4 text-center text-caption text-gray-500 outline-none"
+            className="min-w-[15rem] border-b border-white bg-transparent px-6 py-4 text-center text-caption text-white outline-none"
           />
 
-          <button type="submit" className="text-style-subtitle text-center text-accent">
+          <button type="submit" className="text-style-subtitle text-center text-white">
             Subscribe to our newsletter
           </button>
         </form>

@@ -10,7 +10,7 @@ import {
 
 function sendContactMail({ toMail, values }) {
   return sendEmail({
-    from: `${COMPANY_TITLE} - Website - Contact <donotreply@rayzcare.com.au>`,
+    from: `${COMPANY_TITLE} - Website - Contact <donotreply@rayzscare.com.au>`,
     to: toMail || DEFAULT_CONTACT_RECEIVE_MAIL,
     bcc: BCC_CONTACT_MAIL,
     subject: `CONTACT MESSAGE FROM - ${values.firstName} ${values.lastName}`,
@@ -48,7 +48,7 @@ function sendContactMail({ toMail, values }) {
 
 function sendContactReplyMail({ toMail, firstName, lastName, content }) {
   return sendEmail({
-    from: `${COMPANY_TITLE} <donotreply@rayzcare.com.au>`,
+    from: `${COMPANY_TITLE} <donotreply@rayzscare.com.au>`,
     to: toMail,
     subject: 'Acknowledgement of received contact message',
     html: `
@@ -62,7 +62,7 @@ function sendContactReplyMail({ toMail, firstName, lastName, content }) {
 
 function sendInquiryReplyMail({ toMail, firstName, lastName, content }) {
   return sendEmail({
-    from: `${COMPANY_TITLE} <donotreply@rayzcare.com.au>`,
+    from: `${COMPANY_TITLE} <donotreply@rayzscare.com.au>`,
     to: toMail,
     subject: 'Acknowledgement of received inquiry',
     html: `
@@ -76,7 +76,7 @@ function sendInquiryReplyMail({ toMail, firstName, lastName, content }) {
 
 function sendInquiryMail({ toMail, values, artwork }) {
   return sendEmail({
-    from: `${COMPANY_TITLE} - Website - inquire <donotreply@rayzcare.com.au>`,
+    from: `${COMPANY_TITLE} - Website - inquire <donotreply@rayzscare.com.au>`,
     to: toMail || DEFAULT_INQUIRE_RECEIVE_MAIL,
     bcc: BCC_CONTACT_MAIL,
     subject: `INQUIRY FROM - ${values.firstName} ${values.lastName}`,

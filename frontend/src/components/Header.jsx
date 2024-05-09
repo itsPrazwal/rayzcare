@@ -8,23 +8,22 @@ import { m, AnimatePresence } from 'framer-motion'
 
 import { LogoIcon } from '~/components/Icons'
 import { ToggleIcon } from '~/components/Icons'
-import { Breadcrumb } from '~/components/Breadcrumb'
+
+const menu = [
+  {name: 'Home', href: '/'},
+  {name: 'Services', href: '/services'},
+  {name: 'About Us', href: '/pages/about'},
+  {name: 'Gallery', href: '/gallery'},
+  {name: 'Contact', href: '/contact'}
+]
 
 export function Header() {
   const router = useRouter()
-  const isHome = router.pathname === '/'
 
   const [open, setOpen] = React.useState(false)
   const isMobile = useMediaQuery({query: '(max-width: 1024px)'})
 
   const headerRef = React.useRef()
-
-  const menu = [
-    {name: 'Services', href: '/services'},
-    {name: 'About', href: '/pages/about'},
-    {name: 'Gallery', href: '/gallery'},
-    {name: 'Contact', href: '/contact'}
-  ]
 
   return (
     <>
@@ -39,7 +38,10 @@ export function Header() {
           ? (
             <div className="col-span-6 flex gap-20 justify-center items-center">
               {menu.map(item => (
-                <Link href={item.href} key={item.name} className="uppercase">{item.name}</Link>
+                <Link href={item.href} key={item.name}
+                      className={clsx("uppercase border-theme hover:border-b-2 hover:pb-4", {
+                        "border-theme border-b-2 pb-4": item.href === router.asPath
+                      })}>{item.name}</Link>
               ))}
             </div>
           )

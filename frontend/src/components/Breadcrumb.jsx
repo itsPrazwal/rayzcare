@@ -57,7 +57,7 @@ export function Breadcrumb() {
     >
       <ul className="flex text-accent">
         <li className="pointer-events-auto whitespace-nowrap">
-          <Link href="/">Rayzcare</Link>
+          <Link href="/">Rayzscare</Link>
         </li>
         {breadcrumbs.map(({ label, route }) => (
           <li
