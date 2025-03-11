@@ -4,7 +4,7 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
-import ndisImg from 'public/images/ilovendis.png'
+// import ndisImg from 'public/images/ilovendis.png'
 
 import { LogoIcon } from '~/components/Icons'
 import { NewsletterSubscribe } from '~/components/NewsletterSubscribe'
@@ -44,7 +44,7 @@ export function Footer() {
             />
           </div>
           <div className="flex w-full items-center justify-center px-10 col-span-2">
-            <Image src={ndisImg} alt="ilovendis"/>
+            {/*<Image src={ndisImg} alt="ilovendis"/>*/}
           </div>
         </div>
         <div className="grid grid-cols-12 text-style-caption text-white uppercase">
