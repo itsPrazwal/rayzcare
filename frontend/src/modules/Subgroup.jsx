@@ -1,7 +1,5 @@
 import { RichText } from '~/components/RichText'
-import { PublicationCard } from '~/components/PublicationCard'
 import { VimeoCard } from '~/components/VimeoCard'
-import { Title } from '~/components/Title'
 
 export default function ModuleSubgroup({ data, key }) {
   const { title, description, pages } = data
@@ -19,8 +17,6 @@ export default function ModuleSubgroup({ data, key }) {
       {pages.length > 0 && (
         <ul className="grid-items">
           {pages.map(page => {
-            if (page._type === 'publication')
-              return <PublicationCard key={page._id} publication={page} publicationsLength={pages.length} />
             if (page._type === 'vimeo') return <VimeoCard key={page._id} vimeo={page} />
           })}
         </ul>
